@@ -2,160 +2,102 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Para Meu Amor</title>
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff7f7;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fdfdfd;
       color: #333;
+      text-align: center;
     }
 
-    header {
-      background-color: #ffb6c1;
-      color: white;
+    header, footer {
+      background-color: #ffccd5;
       padding: 20px;
-      text-align: center;
-      font-size: 1.8em;
-      font-weight: bold;
     }
 
-    footer {
-      background-color: #ffb6c1;
-      color: white;
-      padding: 10px;
-      text-align: center;
+    h1 {
+      margin: 0;
     }
 
     .gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
-      padding: 40px 20px;
+      gap: 20px;
+      padding: 30px;
     }
 
-    .card {
-      width: 300px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.3s ease;
+    .gallery img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    .card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .player {
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .player audio {
-      width: 100%;
-      max-width: 500px;
-    }
-
-    .contador {
-      text-align: center;
-      font-size: 1.4em;
-      margin-top: 40px;
-      padding: 0 20px;
-    }
-
-    .mensagens {
-      text-align: center;
+    .messages {
       font-size: 1.2em;
-      margin: 20px auto 60px;
-      max-width: 600px;
-      line-height: 1.6;
-      color: #555;
+      padding: 20px;
+      font-style: italic;
+    }
+
+    .timer {
+      font-size: 1.5em;
+      margin: 20px 0;
+      color: #d6336c;
     }
   </style>
 </head>
 <body>
-
   <header>
-    Para o Amor da Minha Vida 💖
+    <h1>Para o amor da minha vida ❤️</h1>
   </header>
 
-  <!-- Galeria de Fotos -->
   <div class="gallery">
-    <div class="card">
-      <img src="https://drive.google.com/uc?export=view&id=1k2pW68XU7oNeWhkwSt5eXe3nYg4g5HFR" alt="Foto 1" />
-    </div>
-    <div class="card">
-      <img src="https://drive.google.com/uc?export=view&id=1jY3_NuQF241AA0k2Ngdmqsex2BGK20Qo" alt="Foto 2" />
-    </div>
-    <div class="card">
-      <img src="https://drive.google.com/uc?export=view&id=1j_LRNDvlmSI_4bcCCOXACxpsY6ZDWsKvh" alt="Foto 3" />
-    </div>
-    <div class="card">
-      <img src="https://drive.google.com/uc?export=view&id=1jIIUEJSms5L-gqLtpTEo_gkC0NyMbP2W" alt="Foto 4" />
-    </div>
-    <div class="card">
-      <img src="https://drive.google.com/uc?export=view&id=1jJRh4hwzIFH-wCXvKOWseiZJsWj9ZTk1" alt="Foto 5" />
-    </div>
+    <img src="https://drive.google.com/uc?export=download&id=1k2pW68XU7oNeWhkwSt5eXe3nYg4g5HFR" alt="Foto 1">
+    <img src="https://drive.google.com/uc?export=download&id=1jY3_NuQF241AA0k2Ngdmqsex2BGK20Qo" alt="Foto 2">
+    <img src="https://drive.google.com/uc?export=download&id=1j_LRNDvlmSl_4bcCOXACxpsY6ZDWsKvh" alt="Foto 3">
+    <img src="https://drive.google.com/uc?export=download&id=1jIIUEJSms5L-gqLtpTEo_gkC0NyMbP2W" alt="Foto 4">
+    <img src="https://drive.google.com/uc?export=download&id=1jJRh4hwzIFH-wCXvKOWseiZJsWj9ZTk1" alt="Foto 5">
   </div>
 
-  <!-- Contador de tempo -->
-  <div class="contador" id="contador">
-    Carregando o tempo do nosso amor...
-  </div>
-
-  <!-- Mensagens românticas -->
-  <div class="mensagens">
-    <p>As long as I`m here, no one can hurt you</p>
+  <div class="messages">
+    <p>As long as I'm here, no one can hurt you</p>
     <p>Eu faria tudo de novo, do mesmo jeito, só pra chegar até você.</p>
   </div>
 
-  <!-- Player de Música -->
-  <div class="player">
-    <h2>Nosso som 💖</h2>
-    <audio controls>
-      <source src="https://drive.google.com/uc?export=download&id=1k2UWXngD7Zb5aFwJThm2KZrcvm7h827_" type="audio/mpeg">
-      Seu navegador não suporta o elemento de áudio.
-    </audio>
-  </div>
+  <div class="timer" id="timer">Carregando contador...</div>
 
-  <!-- Rodapé -->
   <footer>
-    Feito com amor por você ❤️
+    <p>Feito com todo amor do mundo 💖</p>
+    <audio controls>
+      <source src="https://drive.google.com/uc?export=download&id=1k2UWXngD7Zb5aFwJThm2KZrcvm7h827_" type="audio/mp3">
+      Seu navegador não suporta o áudio.
+    </audio>
   </footer>
 
-  <!-- Script do contador -->
   <script>
-    function atualizarContador() {
-      const inicio = new Date('2025-04-27T00:00:00');
-      const agora = new Date();
-      const diff = agora - inicio;
+    const startDate = new Date("2025-04-27T00:00:00");
 
-      const segundos = Math.floor(diff / 1000);
-      const minutos = Math.floor(segundos / 60);
-      const horas = Math.floor(minutos / 60);
-      const dias = Math.floor(horas / 24);
+    function updateTimer() {
+      const now = new Date();
+      const diff = now - startDate;
 
-      const horasRestantes = horas % 24;
-      const minutosRestantes = minutos % 60;
-      const segundosRestantes = segundos % 60;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
 
-      document.getElementById('contador').innerText =
-        `Já são ${dias} dias, ${horasRestantes} horas, ${minutosRestantes} minutos e ${segundosRestantes} segundos ` +
-        vivendo o tipo de amor que muitos sonham em sentir só uma vez;
+      document.getElementById("timer").innerText =
+        Já são ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos vivendo o tipo de amor que muitos sonham em sentir só uma vez;
     }
 
-    setInterval(atualizarContador, 1000);
-    atualizarContador();
+    setInterval(updateTimer, 1000);
+    updateTimer();
   </script>
-
 </body>
 </html>
