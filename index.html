@@ -27,9 +27,6 @@
       color: white;
       padding: 10px;
       text-align: center;
-      position: relative;
-      bottom: 0;
-      width: 100%;
     }
 
     .gallery {
@@ -67,6 +64,22 @@
       width: 100%;
       max-width: 500px;
     }
+
+    .contador {
+      text-align: center;
+      font-size: 1.4em;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+
+    .mensagens {
+      text-align: center;
+      font-size: 1.2em;
+      margin: 20px auto 60px;
+      max-width: 600px;
+      line-height: 1.6;
+      color: #555;
+    }
   </style>
 </head>
 <body>
@@ -75,24 +88,37 @@
     Para o Amor da Minha Vida 💖
   </header>
 
+  <!-- Galeria de Fotos -->
   <div class="gallery">
     <div class="card">
-      <img src="https://drive.google.com/uc?id=1k2pW68XU7oNeWhkwSt5eXe3nYg4g5HFR" alt="Foto 1" />
+      <img src="https://drive.google.com/uc?export=view&id=1k2pW68XU7oNeWhkwSt5eXe3nYg4g5HFR" alt="Foto 1" />
     </div>
     <div class="card">
-      <img src="https://drive.google.com/uc?id=1jY3_NuQF241AA0k2Ngdmqsex2BGK20Qo" alt="Foto 2" />
+      <img src="https://drive.google.com/uc?export=view&id=1jY3_NuQF241AA0k2Ngdmqsex2BGK20Qo" alt="Foto 2" />
     </div>
     <div class="card">
-      <img src="https://drive.google.com/uc?id=1j_LRNDvlmSI_4bcCCOXACxpsY6ZDWsKvh" alt="Foto 3" />
+      <img src="https://drive.google.com/uc?export=view&id=1j_LRNDvlmSI_4bcCCOXACxpsY6ZDWsKvh" alt="Foto 3" />
     </div>
     <div class="card">
-      <img src="https://drive.google.com/uc?id=1jIIUEJSms5L-gqLtpTEo_gkC0NyMbP2W" alt="Foto 4" />
+      <img src="https://drive.google.com/uc?export=view&id=1jIIUEJSms5L-gqLtpTEo_gkC0NyMbP2W" alt="Foto 4" />
     </div>
     <div class="card">
-      <img src="https://drive.google.com/uc?id=1jJRh4hwzIFH-wCXvKOWseiZJsWj9ZTk1" alt="Foto 5" />
+      <img src="https://drive.google.com/uc?export=view&id=1jJRh4hwzIFH-wCXvKOWseiZJsWj9ZTk1" alt="Foto 5" />
     </div>
   </div>
 
+  <!-- Contador de tempo -->
+  <div class="contador" id="contador">
+    Carregando o tempo do nosso amor...
+  </div>
+
+  <!-- Mensagens românticas -->
+  <div class="mensagens">
+    <p>As long as I`m here, no one can hurt you</p>
+    <p>Eu faria tudo de novo, do mesmo jeito, só pra chegar até você.</p>
+  </div>
+
+  <!-- Player de Música -->
   <div class="player">
     <h2>Nosso som 💖</h2>
     <audio controls>
@@ -101,9 +127,37 @@
     </audio>
   </div>
 
+  <!-- Rodapé -->
   <footer>
     Feito com amor por você ❤️
   </footer>
 
+  <!-- Script do contador -->
+  <script>
+    function atualizarContador() {
+      const inicio = new Date('2025-04-27T00:00:00');
+      const agora = new Date();
+      const diff = agora - inicio;
+
+      const segundos = Math.floor(diff / 1000);
+      const minutos = Math.floor(segundos / 60);
+      const horas = Math.floor(minutos / 60);
+      const dias = Math.floor(horas / 24);
+
+      const horasRestantes = horas % 24;
+      const minutosRestantes = minutos % 60;
+      const segundosRestantes = segundos % 60;
+
+      document.getElementById('contador').innerText =
+        `Já são ${dias} dias, ${horasRestantes} horas, ${minutosRestantes} minutos e ${segundosRestantes} segundos ` +
+        vivendo o tipo de amor que muitos sonham em sentir só uma vez;
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+  </script>
+
 </body>
 </html>
+    
+   
